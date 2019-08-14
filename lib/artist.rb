@@ -10,6 +10,14 @@ class Artist
     @@all
   end
 
+  def self.find_or_create_by_name(name)
+    if @@all.any? {|artist| artist.name == name}
+      @@all.detect {|artist| artist.name == name}
+    else
+      Artist.new(name)
+    end
+  end
+
   def songs
     Songs.all.select {|song| song.artist == self}
   end
