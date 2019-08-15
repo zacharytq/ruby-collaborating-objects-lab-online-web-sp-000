@@ -18,5 +18,6 @@ class Song
     holder = file.delete_suffix(".mp3").split(" - ")
     song = Song.new(holder[1])
     song.artist_name = holder[0]
+    song
   end
 end
