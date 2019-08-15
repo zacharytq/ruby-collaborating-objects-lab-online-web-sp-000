@@ -4,8 +4,8 @@ class MP3Importer
   end
 
   def files
-    @files = Dir.new(@path)
-    @files["*.mp3"]
+    @files = Dir["#{@path}*.mp3"]
+    
   end
 
 end
