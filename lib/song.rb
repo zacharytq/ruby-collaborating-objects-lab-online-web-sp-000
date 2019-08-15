@@ -14,7 +14,7 @@ class Song
     @artist = Artist.find_or_create_by_name(name)
   end
 
-  def new_by_filename(file)
+  def self.new_by_filename(file)
     holder = file.delete_suffix(".mp3").split(" - ")
     song = Song.new(holder[1])
     song.artist_name = holder[0]
